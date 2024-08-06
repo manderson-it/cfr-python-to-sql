@@ -9,6 +9,7 @@ Cloud Functions or Run with Python to connect to Cloud SQL PostgreSQL
 - One serverless VPC connector
 - One SQL instance with PostgreSQL 15
 - One GCE instance
+  - GSA also has `run.invoker` IAM role to trigger Cloud Functions
   - spot
   - shuts down after a maximum of four hours runtime
 - Artifact Registry
@@ -59,7 +60,7 @@ curl -m 70 -X POST https://northamerica-northeast1... \
 
 You get a 404, if you try to trigger it from elsewhere (outside the VPC, like your laptop).
 
-You get a 404, if you don't have the run.invoker role on your account.
+You get a 404, if you don't have the `run.invoker` role on your account.
 
 ```shell
 speedy@DESKTOP-1O1OVAU MINGW64 ~/mypython/python-docs-samples/cloud-sql/postgres/sqlalchemy (main)
